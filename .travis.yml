@@ -11,7 +11,7 @@ script:
   - dotnet publish -r linux-x64 -c release
 
 before_deploy: 
- - tar -czf battleship.tar.gz ./Battleship.Ascii/bin/release/netcoreapp3.1/linux-x64/publish
+ - tar -czf battleship.tar.gz ./Battleship.Ascii/bin/Release/netcoreapp3.1/linux-x64/publish
  - cp ./battleship.tar.gz ./dist/battleship.tar.gz
 deploy: 
  provider: pages
