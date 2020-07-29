@@ -42,20 +42,24 @@
 	<h2>Instructions</h2>
 	<ol>
 		<li>Download the battleship zip package from the link above</li>
-		<li>Unzip the package using WinZip/Tar or similar softwares</li>
-		<li>Open the extracted directory and enter into the bin directory</li>
+		<li>Unzip the package using WinZip/7-Zip/tar or similar software</li>
+		<li>Open the extracted directory. You need to have a bin directory</li>
     </ol>
     <h3> Instruction for Linux</h3>
 	<ol>
-		<li>Run following in a terminal ./Battleship.Ascii/bin/Release/netcoreapp3.1/linux-x64/publish/Battleship.Ascii</li>
+		<li>Run following in a terminal ./bin/Release/netcoreapp3.1/linux-x64/publish/Battleship.Ascii</li>
+        <li>If you do not have linux, you can use docker to run the linux version. In a terminal run following:</li>
+        <li>docker run -it -v ${PWD}:/battleship mcr.microsoft.com/dotnet/core/sdk:3.1 bash</li>
+        <li>then run following command inside the docker container:</li>
+        <li>./bin/Release/netcoreapp3.1/linux-x64/publish/Battleship.Ascii</li>
 	</ol>
 	<h3> Instruction for Windows (NOT READY)</h3>
 	<ol>
-		<li>Double click on ./Battleship.Ascii/bin/Release/netcoreapp3.1/win-x64/publish/Battleship.Ascii.exe</li>
+		<li>Double click on ./bin/Release/netcoreapp3.1/win-x64/publish/Battleship.Ascii.exe</li>
 	</ol>
 	<h3> Instruction for Mac (NOT READY)</h3>
 	<ol>
-		<li>Run following in a terminal ./Battleship.Ascii/bin/Release/netcoreapp3.1/osx-x64/publish/Battleship.Ascii</li>
+		<li>Run following in a terminal ./bin/Release/netcoreapp3.1/osx-x64/publish/Battleship.Ascii</li>
     </ol>
    
 </div>
