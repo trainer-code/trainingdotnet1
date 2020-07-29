@@ -1,0 +1,22 @@
+image: mcr.microsoft.com/dotnet/core/sdk:3.1
+
+stages: 
+  - test
+  - analyze
+
+unit test:
+  stage: test
+  script:
+  - dotnet test
+
+sonar:
+  stage: analyze
+  before_script: 
+  - dotnet tool install --global dotnet-sonarscanner
+  - export PATH="$PATH:/root/.dotnet/tools"
+  - apt-get update && apt-get install -y default-jdk
+  script:
+  - dotnet sonarscanner begin /k:"$$$SONAR_PROJECT_KEY$$$" /d:sonar.host.url=$$$SONAR_URL$$$
+  - dotnet build
+  - dotnet sonarscanner end
+
