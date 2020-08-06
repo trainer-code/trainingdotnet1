@@ -44,5 +44,12 @@ namespace Battleship.Ascii.Tests
          Program.ShowPosition("test");
          Assert.AreEqual(System.Console.ForegroundColor, System.ConsoleColor.Cyan);
       }
+
+        [TestMethod]
+      public void testShowStep()
+      {
+         Program.ShowStep();
+         Assert.AreEqual(System.Console.ForegroundColor, System.ConsoleColor.White);
+      }
    }
 }
