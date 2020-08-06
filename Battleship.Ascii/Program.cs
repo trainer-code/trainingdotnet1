@@ -72,6 +72,12 @@ namespace Battleship.Ascii
             Console.WriteLine(message);
         }
 
+        public static void ShowStep()
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("------------------------------------------------------------");
+        }
+
 
         private static void StartGame()
         {
@@ -97,6 +103,7 @@ namespace Battleship.Ascii
                 if (isHit)
                 {
                     showHit();
+                  ShowStep();
                 }
                 else
                 {
@@ -112,11 +119,14 @@ namespace Battleship.Ascii
                 if (isHit)
                 {
                     showHit();
+                    ShowStep();
                 }
                 else
                 {
                     showWater();
                 }
+
+
             }
             while (true);
         }
@@ -151,7 +161,7 @@ namespace Battleship.Ascii
             myFleet = GameController.InitializeShips().ToList();
 
             ShowInstruction("Please position your fleet (Game board size is from A to H and 1 to 8) :");
-
+            ShowStep();
             foreach (var ship in myFleet)
             {
                 Console.WriteLine();
