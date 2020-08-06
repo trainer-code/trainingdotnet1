@@ -16,5 +16,33 @@ namespace Battleship.Ascii.Tests
 
          Assert.AreEqual(expected, actual);
       }
+
+      [TestMethod]
+      public void testHitColor()
+      {
+         Program.showHit();
+         Assert.AreEqual(System.Console.ForegroundColor, System.ConsoleColor.Red);
+      }
+
+       [TestMethod]
+      public void testWaterColor()
+      {
+         Program.showWater();
+         Assert.AreEqual(System.Console.ForegroundColor, System.ConsoleColor.Blue);
+      }
+
+       [TestMethod]
+      public void testInstructionsColor()
+      {
+         Program.ShowInstruction("Message");
+         Assert.AreEqual(System.Console.ForegroundColor, System.ConsoleColor.Green);
+      }
+
+       [TestMethod]
+      public void testPositionColor()
+      {
+         Program.ShowPosition("test");
+         Assert.AreEqual(System.Console.ForegroundColor, System.ConsoleColor.Cyan);
+      }
    }
 }
